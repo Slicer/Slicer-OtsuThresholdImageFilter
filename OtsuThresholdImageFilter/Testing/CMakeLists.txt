@@ -1,6 +1,9 @@
 
 #-----------------------------------------------------------------------------
 set(BASELINE ${CMAKE_CURRENT_SOURCE_DIR}/../Data/Baseline)
+set(INPUT ${CMAKE_CURRENT_SOURCE_DIR}/../Data/Input)
+set(TEMP "${CMAKE_BINARY_DIR}/Testing/Temporary")
+
 set(CLP ${MODULE_NAME})
 
 #-----------------------------------------------------------------------------
@@ -17,7 +20,7 @@ add_test(NAME ${testname} COMMAND ${SEM_LAUNCH_COMMAND} $<TARGET_FILE:${CLP}Test
     --insideValue 0
     --outsideValue 255
     --numberOfBins 128
-   ${TEST_DATA}/CTHeadResampled.nhdr
+   ${INPUT}/CTHeadResampled.nhdr
    ${TEMP}/OtsuThresholdImageFilterTest.nhdr
   )
 set_property(TEST ${testname} PROPERTY LABELS ${CLP})
